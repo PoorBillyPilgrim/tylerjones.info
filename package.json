@@ -4,7 +4,8 @@
   "description": "personal site with markdown blog",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,26 @@
   "bugs": {
     "url": "https://github.com/PoorBillyPilgrim/tylerjones.info/issues"
   },
-  "homepage": "https://github.com/PoorBillyPilgrim/tylerjones.info#readme"
+  "homepage": "https://github.com/PoorBillyPilgrim/tylerjones.info#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dompurify": "^2.0.12",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "helmet": "^4.1.0",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
+    "marked": "^1.1.1",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.0",
+    "serve-favicon": "^2.5.0",
+    "slugify": "^1.4.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "nodemon": "^2.0.4"
+  }
 }
