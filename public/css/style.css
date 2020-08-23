@@ -68,10 +68,16 @@ nav a:hover {
     width: 75%;
 }
 
-.hero-blurb p {
+.hero-blurb h1, .hero-blurb p {
     padding-bottom: 0;
     margin: 0;
     text-align: center;
+}
+
+.social-media-icon {
+    font-size: 30px;
+    color: #282828;
+    padding: 0 2.5px;
 }
 
 @media (min-width: 750px) {
