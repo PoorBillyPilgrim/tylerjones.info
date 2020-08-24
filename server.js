@@ -1,8 +1,16 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
+const mongoose = require('mongoose');
 
 const app = express();
+
+const mongoURL = process.env.MONGO_URL;
+mongoose.connect(mongoURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon_io', 'favicon.ico')));
