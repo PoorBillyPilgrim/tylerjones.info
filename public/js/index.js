@@ -2,6 +2,7 @@ $(document).ready(function () {
     $('.toggle-dark-mode').click(function () {
         $('body').toggleClass('bg-light dark-mode');
         $('nav').toggleClass('navbar-light navbar-dark')
+        $('i').toggleClass('social-dark')
         if ($('body').hasClass('dark-mode')) {
             $('.nav-btn').attr('src', 'images/sun-32x32.png');
         } else {
