@@ -4,11 +4,24 @@
     --dark: #343a40;
 }
 
+.dark-mode {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
 a {
     text-decoration: none;
 }
 
-/** Dark/Light Toggle **/ 
+p a {
+    color: #FFA5A5;
+}
+
+a:hover {
+    color: #ff8080;
+}
+
+/** Light Theme **/ 
 .toggle-dark-mode {
     background: transparent;
     border: 0;
@@ -18,17 +31,21 @@ a {
     background-color: var(--light);
 }
 
-.dark-mode {
-    background-color: var(--dark);
-    color: var(--light);
+.a-light {
+    color: #C83E4D;
+}
+
+.social-light {
+    color: #282828;
+}
+
+.a-light:hover, 
+.social-light:hover,
+.nav-light:hover {
+    color: #b33241;
 }
 
 /** Navbar **/
-    /** Navbar **/
-    /*nav {
-        width: 100%;
-    }*/
-
 nav ul {
     list-style-type: none;
     display: flex;
@@ -38,10 +55,6 @@ nav ul {
 
 nav a {
     color: #707070;
-}
-
-nav a:hover {
-    /*color: #000;*/
 }
 
 .li-l {
@@ -56,6 +69,10 @@ nav a:hover {
     padding: 0;
 }
 
+.dark-mode-btn img {
+    width: 65%;
+}
+
 /** Hero **/
 .hero {
     display: flex;
@@ -68,7 +85,8 @@ nav a:hover {
     width: 75%;
 }
 
-.hero-blurb h1, .hero-blurb p {
+.hero-blurb h1, 
+.hero-blurb p {
     padding-bottom: 0;
     margin: 0;
     text-align: center;
@@ -82,18 +100,11 @@ nav a:hover {
 
 .social-media-icon {
     font-size: 30px;
-    color: #282828;
+    color: #fff;
     padding: 0 2.5px;
 }
 
-.social-dark {
-    color: #fff;
-}
-
-i:hover {
-    color: #0FA0CE;
-}
-
+/** screens wider than 750px **/
 @media (min-width: 750px) {
 
     /** Hero **/
@@ -113,7 +124,8 @@ i:hover {
         justify-content: flex-end;
     }
 
-    .hero-blurb h1, .hero-blurb p {
+    .hero-blurb h1, 
+    .hero-blurb p {
         padding-left: 10px;
         margin: 0;
         text-align: left;
