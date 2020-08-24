@@ -39,6 +39,10 @@ a:hover {
     color: #282828;
 }
 
+.nav-light {
+    color: #000;
+}
+
 .a-light:hover, 
 .social-light:hover,
 .nav-light:hover {
@@ -54,7 +58,7 @@ nav ul {
 }
 
 nav a {
-    color: #707070;
+    color: var(--light);
 }
 
 .li-l {
@@ -104,6 +108,21 @@ nav a {
     padding: 0 2.5px;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .social-media-blurb {
+    justify-content: center;
+}
 /** screens wider than 750px **/
 @media (min-width: 750px) {
 
