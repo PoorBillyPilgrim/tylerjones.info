@@ -17,8 +17,13 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon_io', 'favicon.
 
 app.set('view engine', 'ejs');
 
-app.use('/', (req, res) => {
-    res.render('index')
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+app.get('/login', (req, res) => {
+    console.log('went to login page');
+    res.render('login.ejs');
 });
 
 app.listen(3001, () => {
