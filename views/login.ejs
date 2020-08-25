@@ -1,8 +1,9 @@
 <%- include('partials/header.ejs') %>
-<form class="container">
+<form action="login" method="POST">
     <label for="username">Username</label>
-    <input id="username">
+    <input type="text" name="username" id="username">
     <label for="password">Password</label>
-    <input type="password" id="password">
+    <input type="password" name="password" id="password">
+    <input class="button-primary" type="submit" value="let me in">
 </form>
 <%- include('partials/footer.ejs') %>
