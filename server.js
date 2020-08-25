@@ -19,6 +19,8 @@ mongoose.connect(mongoURL, {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon_io', 'favicon.ico')));
 
+// body-parser middleware
+// parses incoming requests and makes data available on req.body
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
