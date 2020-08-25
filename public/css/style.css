@@ -109,7 +109,7 @@ nav a {
 }
 
 /** Form **/
-form {
+.login-page {
     display: flex;
     height: 65vh;
     width: 100vw;
@@ -117,6 +117,20 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.login-index {
+    display: flex;
+    height: 65vh;
+    width: 100vw;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.login-index input {
+    margin: 0 30px;
 }
 
 input {
