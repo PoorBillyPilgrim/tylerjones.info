@@ -109,23 +109,28 @@ nav a {
 }
 
 /** Form **/
-.login-page {
+input,
+textarea {
+    color: var(--dark);
+}
+
+.login-page, 
+.dashboard-index,
+.new-project {
     display: flex;
     height: 65vh;
     width: 100vw;
     position: absolute;
     align-items: center;
     justify-content: center;
+}
+
+.login-page,
+.new-project {
     flex-direction: column;
 }
 
 .dashboard-index {
-    display: flex;
-    height: 65vh;
-    width: 100vw;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
     flex-direction: row;
 }
 
@@ -133,8 +138,10 @@ nav a {
     margin: 0 30px;
 }
 
-input {
-    color: var(--dark);
+
+.new-project input,
+.new-project textarea {
+    width: 50%;
 }
 
 /** Footer **/ 
