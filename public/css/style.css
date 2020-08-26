@@ -119,7 +119,7 @@ nav a {
     flex-direction: column;
 }
 
-.login-index {
+.dashboard-index {
     display: flex;
     height: 65vh;
     width: 100vw;
@@ -129,7 +129,7 @@ nav a {
     flex-direction: row;
 }
 
-.login-index input {
+.dashboard-index input {
     margin: 0 30px;
 }
 
