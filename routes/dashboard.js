@@ -7,14 +7,26 @@ router.get('/', isLoggedIn, (req, res) => {
 });
 
 router.post('/', (req, res) => {
-
     if (req.body.projects) {
-        res.render('dashboard/projects');
+        res.redirect('/dashboard/projects');
     }
     if (req.body.notes) {
         res.render('dashboard/notes');
     }
 });
+
+router.get('/projects', (req, res) => {
+    res.render('dashboard/projects');
+})
+
+router.get('/projects/new', isLoggedIn, (req, res) => {
+    res.render('dashboard/projects/new');
+});
+
+router.post('/projects/new', (req, res) => {
+    console.log(req.body);
+    res.redirect('/dashboard/projects');
+})
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {

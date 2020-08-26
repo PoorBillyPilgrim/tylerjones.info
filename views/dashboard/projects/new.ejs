@@ -1,0 +1,18 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/dashboardHeader.ejs') %>
+<form class="new-project container" action="/dashboard/projects/new" method="POST">
+    <label for="title">Title</label>
+    <input id="title" type=text name="title">
+    <label for="url">Url</label>
+    <input type=text name="url">
+    <label for="gitHubUrl">GitHub URL</label>
+    <input type=text name="gitHubUrl">
+    <label for="description">Description</label>
+    <textarea name="description" rows="10"></textarea>
+    <label for="techUsed">Tech Used</label>
+    <input type=text name="techUsed">
+    <label for="img">Image File</label>
+    <input type=text name="img">
+    <input class="button-primary" type="submit" value="create project">
+</form>
+<%- include('../../partials/footer.ejs') %>
