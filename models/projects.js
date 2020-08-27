@@ -1,12 +1,16 @@
-const moongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-const ProjectSchema = new moongoose.Schema({
+const ProjectSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
     },
+    order: {
+        type: Number,
+        unique: true
+    },
     url: {
-        type: String,
+        type: String
     },
     gitHubUrl: {
         type: String
@@ -22,4 +26,4 @@ const ProjectSchema = new moongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Project', ProjectSchema);
+module.exports = mongoose.model('project', ProjectSchema);

@@ -3,5 +3,17 @@
 <div>
     <h1>Projects</h1>
     <a class="button button-primary" href="/dashboard/projects/new">create new project</a>
+    <div>
+        <% projects.forEach(project => { %>
+        <h2><%= project.title %></h2>
+        <a href=<%= project.gitHubUrl%>><%= project.gitHubUrl%></a>
+        <ul>
+            <% project.techUsed.forEach(tech => { %>
+            <li><%= tech %></li>
+            <% }) %>
+        </ul>
+        <img src="/images/projects/<%= project.img %>">
+        <% })%>
+    </div>
 </div>
 <%- include('../../partials/dashboardFooter.ejs') %>

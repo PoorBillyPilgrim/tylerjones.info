@@ -16,6 +16,7 @@ mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).catch(err => console.error(err));
+mongoose.set('useCreateIndex', true);
 
 // express app
 const app = express();

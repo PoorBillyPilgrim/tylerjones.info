@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Project = require('../models/projects');
 
 
 router.get('/', isLoggedIn, (req, res) => {
@@ -15,16 +16,21 @@ router.post('/', (req, res) => {
     }
 });
 
-router.get('/projects', (req, res) => {
-    res.render('dashboard/projects');
-})
+router.get('/projects', async (req, res) => {
+    const projects = await Project.find().sort({ order: 'asc' });
+    res.render('dashboard/projects', { projects: projects });
+});
 
 router.get('/projects/new', isLoggedIn, (req, res) => {
     res.render('dashboard/projects/new');
 });
 
-router.post('/projects/new', (req, res) => {
-    console.log(req.body);
+router.post('/projects/new', async (req, res) => {
+    req.body.techUsed = req.body.techUsed.split(',');
+    project = new Project(req.body);
+    console.log(project);
+    project = await project.save();
+    // need to use redirect in order for the projects variable to load, otherwise you get an error :(
     res.redirect('/dashboard/projects');
 })
 
