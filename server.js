@@ -4,6 +4,8 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override')
+const Project = require('./models/projects');
 
 // for login credentials
 const session = require('express-session');
@@ -21,10 +23,13 @@ mongoose.set('useCreateIndex', true);
 // express app
 const app = express();
 
+// Middleware
 // images and styling
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon_io', 'favicon.ico')));
 
+// html forms only allow GET/POST; method-override allows for PUT/DELETE
+app.use(methodOverride('_method'));
 
 // authenticate and persist log-in credentials
 app.use(session({
@@ -79,8 +84,9 @@ const loginRoutes = require('./routes/login.js');
 // const logout = require('./routes/logout.js');
 const dashboardRoutes = require('./routes/dashboard.js');
 
-app.get('/', (req, res) => {
-    res.render('index');
+app.get('/', async (req, res) => {
+    const projects = await Project.find().sort({ createdAt: 'asc' });
+    res.render('index', { projects: projects });
 });
 
 // /dashboard be called before /login 
@@ -92,6 +98,10 @@ app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/login');
 });
+
+app.use('*', (req, res) => {
+    res.status(404).render('404');
+})
 
 app.listen(3001, () => {
     console.info('Listening on port 3001');
