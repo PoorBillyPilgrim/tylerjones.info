@@ -4,6 +4,14 @@
     --dark: #343a40;
 }
 
+body {
+    min-height: 100vh;
+}
+
+main {
+    min-height: 75vh;
+}
+
 .dark-mode {
     background-color: var(--dark);
     color: var(--light);
@@ -11,6 +19,7 @@
 
 a {
     text-decoration: none;
+    color: var(--light);
 }
 
 p a {
@@ -19,6 +28,43 @@ p a {
 
 a:hover {
     color: #ff8080;
+}
+
+.card {
+    border: 2px solid var(--light);
+    border-radius: 20px;
+    width: 50%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.card .btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.btns form {
+    margin: 0 5px 0 0;
+}
+
+.error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: -15px 0 15px 0;
+}
+
+.error-card {
+    text-align: center;
+}
+
+.error-card img {
+    width: 30%;
+}
+
+.project-img:hover {
+    opacity: 0.6;
 }
 
 /** Light Theme **/ 
@@ -54,11 +100,7 @@ nav ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
-    margin-top: 15px;
-}
-
-nav a {
-    color: var(--light);
+    padding-top: 15px;
 }
 
 .li-l {
@@ -132,7 +174,7 @@ textarea {
 
 .login-page, 
 .dashboard-index,
-.new-project {
+.project-form {
     display: flex;
     width: 100vw;
     align-items: center;
@@ -148,13 +190,25 @@ textarea {
     margin-top: 150px;
 }
 
-.new-project {
+.project-form {
     margin-top: 15px;
 }
 
-.new-project input,
-.new-project textarea {
+.project-form input,
+.project-form textarea {
     width: 50%;
+}
+
+.button-delete {
+    background-color: #EF2D56;
+    border: 1px solid #EF2D56;
+    color: var(--light);
+}
+
+.button-delete:hover {
+    background-color: #ed1241;
+    border: 1px solid #ed1241;
+    color: var(--light);
 }
 
 /** Footer **/ 
@@ -171,6 +225,7 @@ footer p {
 footer .social-media-blurb {
     justify-content: center;
 }
+
 /** screens wider than 750px **/
 @media (min-width: 750px) {
 
