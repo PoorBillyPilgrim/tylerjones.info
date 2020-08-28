@@ -1,0 +1,18 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/dashboardHeader.ejs') %>
+<form class="project-form container" action="/dashboard/projects/edit/<%= project.id%>?_method=PUT" method="POST">
+    <label for="title">Title</label>
+    <input id="title" type=text name="title" value="<%= project.title%>">
+    <label for="url">Url</label>
+    <input type=text name="url" value="<%= project.url%>">
+    <label for="gitHubUrl">GitHub URL</label>
+    <input type=text name="gitHubUrl" value="<%= project.gitHubUrl%>">
+    <label for="description">Description</label>
+    <textarea name="description" rows="10"><%= project.description %></textarea>
+    <label for="techUsed">Tech Used</label>
+    <input type=text name="techUsed" value="<%= project.techUsed%>">
+    <label for="img">Image File</label>
+    <input type=text name="img" value="<%= project.img%>">
+    <input class="button-primary" type="submit" value="edit project">
+</form>
+<%- include('../../partials/dashboardFooter.ejs') %>

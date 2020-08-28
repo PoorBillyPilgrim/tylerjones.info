@@ -5,9 +5,9 @@ const ProjectSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    order: {
-        type: Number,
-        unique: true
+    createdAt: {
+        type: Date,
+        default: Date.now
     },
     url: {
         type: String

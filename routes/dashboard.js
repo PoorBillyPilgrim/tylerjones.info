@@ -7,6 +7,7 @@ router.get('/', isLoggedIn, (req, res) => {
     res.render('dashboard/index');
 });
 
+// this post route is probably unecessary; consider deleting in favor of dashboardHeader btns
 router.post('/', (req, res) => {
     if (req.body.projects) {
         res.redirect('/dashboard/projects');
@@ -16,10 +17,33 @@ router.post('/', (req, res) => {
     }
 });
 
-router.get('/projects', async (req, res) => {
-    const projects = await Project.find().sort({ order: 'asc' });
+router.get('/projects', isLoggedIn, async (req, res) => {
+    const projects = await Project.find().sort({ createdAt: 'asc' });
     res.render('dashboard/projects', { projects: projects });
 });
+
+router.delete('/projects/:id', async (req, res) => {
+    await Project.findByIdAndDelete(req.params.id);
+    res.redirect('/dashboard/projects');
+})
+
+router.get('/projects/edit/:id', async (req, res) => {
+    const project = await Project.findById(req.params.id);
+    res.render('dashboard/projects/edit', { project: project });
+})
+
+router.put('/projects/edit/:id', async (req, res) => {
+    req.body.techUsed = req.body.techUsed.split(',');
+    project = await Project.findById(req.params.id);
+    project.title = req.body.title;
+    project.url = req.body.url;
+    project.gitHubUrl = req.body.gitHubUrl;
+    project.description = req.body.description;
+    project.techUsed = req.body.techUsed;
+    project.img = req.body.img;
+    project = await project.save();
+    res.redirect('/dashboard/projects');
+})
 
 router.get('/projects/new', isLoggedIn, (req, res) => {
     res.render('dashboard/projects/new');
