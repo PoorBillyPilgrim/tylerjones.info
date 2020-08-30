@@ -12,9 +12,12 @@ main {
     min-height: 75vh;
 }
 
-.dark-mode {
-    background-color: var(--dark);
-    color: var(--light);
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 3rem;
 }
 
 a {
@@ -28,6 +31,11 @@ p a {
 
 a:hover {
     color: #ff8080;
+}
+
+.dark-mode {
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 .card {
@@ -61,10 +69,6 @@ a:hover {
 
 .error-card img {
     width: 30%;
-}
-
-.project-img:hover {
-    opacity: 0.6;
 }
 
 /** Light Theme **/ 
@@ -150,6 +154,33 @@ nav ul {
     padding: 0 2.5px;
 }
 
+/** Homepage -- Projects Section **/
+
+.projects-card {
+    display: flex;
+    flex-direction: column;
+    
+    margin-bottom: 30px;
+    border: 1px solid #22262a;
+    border-radius: 5px;
+    background-color: #22262a;
+    box-shadow: 0 5px 10px rgba(34, 38, 42, 0.5);
+}
+
+.projects-content {
+    padding: 7.5px;
+}
+
+.projects-img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+}
+
+.projects-img:hover {
+    opacity: 0.6;
+    color: #ff8080;
+}
+
 /** Dashboard **/
 input,
 textarea {
@@ -228,8 +259,7 @@ footer .social-media-blurb {
 
 /** screens wider than 750px **/
 @media (min-width: 750px) {
-
-    /** Hero **/
+    /** Home Page -- Hero **/
     .hero {
         display: flex;
         flex-direction: row;
@@ -255,5 +285,15 @@ footer .social-media-blurb {
 
     .social-media-blurb {
         justify-content: flex-start;
+    }
+
+    /** Home Page -- Projects **/
+    .projects-container {
+        display: flex;
+    }
+
+    .projects-card {
+        margin: 0 5px 30px;
+        width: 400px;
     }
 }

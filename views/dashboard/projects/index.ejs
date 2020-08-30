@@ -1,28 +1,23 @@
 <%- include('../../partials/header.ejs') %>
 <%- include('../../partials/dashboardHeader.ejs') %>
-<div class="container">
-    <h1>Projects</h1>
-    <a class="button button-primary" href="/dashboard/projects/new">create new project</a>
-    <div>
-        <% projects.forEach(project => { %>
-        <div class="card">
-            <h2><%= project.title %></h2>
-            <p><%= project.createdAt %></p>
-            <ul>
-                <% project.techUsed.forEach(tech => { %>
-                <li><%= tech %></li>
-                <% }) %>
-            </ul>
-            <div class="btns">
-                <form action="/dashboard/projects/<%= project.id %>?_method=DELETE" method="POST">
-                    <button type="submit" class="button button-delete">Delete</button>
-                </form>
-                <form action="/dashboard/projects/edit/<%= project.id %>" method="GET">
-                    <button type="submit" class="button button-primary">Edit</button>
-                </form>
-            </div>
+<div class="container"></div>
+<h1>Projects</h1>
+<a class="button button-primary" href="/dashboard/projects/new">create new project</a>
+<div>
+    <% projects.forEach(project => { %>
+    <div class="card">
+        <h2><%= project.title %></h2>
+        <p><%= project.createdAt %></p>
+        <div class="btns">
+            <form action="/dashboard/projects/<%= project.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="button button-delete">Delete</button>
+            </form>
+            <form action="/dashboard/projects/edit/<%= project.id %>" method="GET">
+                <button type="submit" class="button button-primary">Edit</button>
+            </form>
         </div>
-        <% })%>
     </div>
+    <% })%>
+</div>
 </div>
 <%- include('../../partials/dashboardFooter.ejs') %>

@@ -33,7 +33,6 @@ router.get('/projects/edit/:id', async (req, res) => {
 })
 
 router.put('/projects/edit/:id', async (req, res) => {
-    req.body.techUsed = req.body.techUsed.split(',');
     project = await Project.findById(req.params.id);
     project.title = req.body.title;
     project.url = req.body.url;
@@ -50,7 +49,6 @@ router.get('/projects/new', isLoggedIn, (req, res) => {
 });
 
 router.post('/projects/new', async (req, res) => {
-    req.body.techUsed = req.body.techUsed.split(',');
     project = new Project(req.body);
     console.log(project);
     project = await project.save();

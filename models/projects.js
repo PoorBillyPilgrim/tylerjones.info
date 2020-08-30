@@ -19,7 +19,7 @@ const ProjectSchema = new mongoose.Schema({
         type: String
     },
     techUsed: {
-        type: [String]
+        type: String
     },
     img: {
         type: String
