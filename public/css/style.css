@@ -13,11 +13,17 @@ main {
 }
 
 h2 {
+    text-align: center;
+    margin: 3.5rem 0;
     font-size: 3.6rem;
 }
 
 h3 {
     font-size: 3rem;
+}
+
+hr {
+    margin-bottom: 0;
 }
 
 a {
@@ -79,6 +85,11 @@ a:hover {
 
 .bg-light {
     background-color: var(--light);
+}
+
+.projects-card-light {
+    background-color: var(--light);
+    border: 1px solid var(--light);
 }
 
 .a-light {
@@ -161,10 +172,13 @@ nav ul {
     flex-direction: column;
     
     margin-bottom: 30px;
-    border: 1px solid #22262a;
     border-radius: 5px;
-    background-color: #22262a;
     box-shadow: 0 5px 10px rgba(34, 38, 42, 0.5);
+}
+
+.projects-card-dark {
+    border: 1px solid #22262a;
+    background-color: #22262a;
 }
 
 .projects-content {
@@ -259,6 +273,8 @@ footer .social-media-blurb {
 
 /** screens wider than 750px **/
 @media (min-width: 1000px) {
+    /** Global **/
+    
     /** Home Page -- Hero **/
     .hero {
         display: flex;
