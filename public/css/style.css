@@ -219,7 +219,7 @@ textarea {
 
 .login-page, 
 .dashboard-index,
-.project-form {
+.dashboard-form {
     display: flex;
     width: 100vw;
     align-items: center;
@@ -235,13 +235,17 @@ textarea {
     margin-top: 150px;
 }
 
-.project-form {
+.dashboard-form {
     margin-top: 15px;
 }
 
-.project-form input,
-.project-form textarea {
+.dashboard-form input,
+.dashboard-form textarea {
     width: 50%;
+}
+
+.markdown-input {
+    height: 700px;
 }
 
 .button-delete {
