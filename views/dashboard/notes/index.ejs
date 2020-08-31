@@ -2,5 +2,23 @@
 <%- include('../../partials/dashboardHeader.ejs') %>
 <div>
     <h1>Notes</h1>
+    <a class="button button-primary" href="/dashboard/notes/new">create new project</a>
+    <div>
+        <% notes.forEach(note => { %>
+        <div class="card">
+            <h2><%= note.title %></h2>
+            <p><%= note.createdAt %></p>
+            <p><%= note.slug %></p>
+            <div class="btns">
+                <form action="/dashboard/notes/<%= note.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="button button-delete">Delete</button>
+                </form>
+                <form action="/dashboard/notes/edit/<%= note.id %>" method="GET">
+                    <button type="submit" class="button button-primary">Edit</button>
+                </form>
+            </div>
+        </div>
+        <% })%>
+    </div>
 </div>
 <%- include('../../partials/dashboardFooter.ejs') %>

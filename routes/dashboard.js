@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Project = require('../models/projects');
+const Note = require('../models/notes');
 
 
 router.get('/', isLoggedIn, (req, res) => {
@@ -17,6 +18,7 @@ router.post('/', (req, res) => {
     }
 });
 
+// Projects
 router.get('/projects', isLoggedIn, async (req, res) => {
     const projects = await Project.find().sort({ createdAt: 'asc' });
     res.render('dashboard/projects', { projects: projects });
@@ -54,6 +56,24 @@ router.post('/projects/new', async (req, res) => {
     project = await project.save();
     // need to use redirect in order for the projects variable to load, otherwise you get an error :(
     res.redirect('/dashboard/projects');
+});
+
+// Notes
+router.get('/notes', isLoggedIn, async (req, res) => {
+    const notes = await Note.find().sort({ createdAt: 'asc' });
+    res.render('dashboard/notes', { notes: notes });
+});
+
+router.get('/notes/new', isLoggedIn, (req, res) => {
+    res.render('dashboard/notes/new');
+});
+
+router.post('/notes/new', async (req, res) => {
+    note = new Note(req.body);
+    console.log(note);
+    note = await note.save();
+    // need to use redirect in order for the projects variable to load, otherwise you get an error :(
+    res.redirect('/dashboard/notes');
 })
 
 function isLoggedIn(req, res, next) {
