@@ -258,7 +258,7 @@ footer .social-media-blurb {
 }
 
 /** screens wider than 750px **/
-@media (min-width: 750px) {
+@media (min-width: 1000px) {
     /** Home Page -- Hero **/
     .hero {
         display: flex;
@@ -289,11 +289,13 @@ footer .social-media-blurb {
 
     /** Home Page -- Projects **/
     .projects-container {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto-fill, auto);
+        grid-row-gap: 15px;
     }
 
     .projects-card {
-        margin: 0 5px 30px;
-        width: 400px;
+        margin: 0 10px 0;
     }
 }
