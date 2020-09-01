@@ -13,7 +13,6 @@ main {
 }
 
 h2 {
-    text-align: center;
     margin: 3.5rem 0;
     font-size: 3.6rem;
 }
@@ -198,6 +197,12 @@ nav ul {
 .projects-img:hover {
     opacity: 0.6;
     color: #ff8080;
+}
+
+/** Homepage **/
+
+h2.homepage {
+    text-align: center;
 }
 
 /** Homepage -- Notes Section **/

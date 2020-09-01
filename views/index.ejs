@@ -21,7 +21,7 @@
     <hr>
     <div class="main-contents">
         <div id="projects">
-            <h2>_projects</h2>
+            <h2 class="homepage">_projects</h2>
             <div class="projects-container">
                 <% projects.forEach(project => { %>
                 <div class="projects-card projects-card-dark">
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div id="notes">
-            <h2>_notes</h2>
+            <h2 class="homepage">_notes</h2>
             <div class="notes-container">
                 <% notes.forEach(note => { %>
                 <a href="/notes/<%= note.slug %>">
