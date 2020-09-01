@@ -27,13 +27,12 @@
                 <div class="projects-card projects-card-dark">
                     <a href=<%= project.url %> target="_blank"><img class="projects-img"
                             src="/images/projects/<%= project.img%>"></a>
-                    <div class="projects-content">
-                        <h3><a href=<%= project.url%> target="_blank"><%= project.title %></a></h3>
-                        <p><%= project.description%></p>
-                        <p><em><%= project.techUsed%></em></p>
-                        <span><a class="social-media-icon" href=<%= project.gitHubUrl%> target="_blank"
-                                rel="noopener"><i class="fab fa-github"></i></a></span>
-                    </div>
+                    <h3 class="projects-card-item"><a href=<%= project.url%> target="_blank"><%= project.title %></a>
+                    </h3>
+                    <p class="projects-card-item"><%= project.description%></p>
+                    <p class="projects-card-item"><em><%= project.techUsed%></em></p>
+                    <span class="projects-card-item"><a class="social-media-icon" href=<%= project.gitHubUrl%>
+                            target="_blank" rel="noopener"><i class="fab fa-github"></i></a></span>
                 </div>
                 <% }) %>
             </div>

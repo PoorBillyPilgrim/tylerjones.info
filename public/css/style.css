@@ -181,8 +181,8 @@ nav ul {
     background-color: #22262a;
 }
 
-.projects-content {
-    padding: 7.5px;
+.projects-card-item {
+    padding-left: 7.5px;
 }
 
 .projects-img {
@@ -317,5 +317,9 @@ footer .social-media-blurb {
 
     .projects-card {
         margin: 0 10px 0;
+    }
+
+    span.projects-card-item {
+        margin-top: auto;
     }
 }
