@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const favicon = require('serve-favicon');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -88,6 +89,16 @@ app.get('/', async (req, res) => {
     const projects = await Project.find().sort({ createdAt: 'asc' });
     res.render('index', { projects: projects });
 });
+
+app.get('/tyler-jones-resume.pdf', (req, res) => {
+    fs.readFile('public/tyler-jones-resume.pdf', (err, data) => {
+        if (err) { console.error(err) }
+        else {
+            res.contentType('application/pdf');
+            res.send(data);
+        }
+    })
+})
 
 // /dashboard be called before /login 
 // because passport.authenticate('local', ... ) must be called before route to which it redirects
