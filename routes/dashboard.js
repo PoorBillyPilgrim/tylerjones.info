@@ -65,15 +65,19 @@ router.get('/notes', isLoggedIn, async (req, res) => {
 });
 
 router.get('/notes/new', isLoggedIn, (req, res) => {
-    res.render('dashboard/notes/new');
+    res.render('dashboard/notes/new', { note: "" });
 });
 
 router.post('/notes/new', async (req, res) => {
-    note = new Note(req.body);
-    console.log(note);
-    note = await note.save();
-    // need to use redirect in order for the projects variable to load, otherwise you get an error :(
-    res.redirect('/dashboard/notes');
+    const note = await Note.findOne({ title: req.body.title })
+    if (note != null) {
+        res.render('dashboard/notes/new', { note: req.body });
+    } else {
+        newNote = new Note(req.body);
+        newNote = await newNote.save();
+        // need to use redirect in order for the projects variable to load, otherwise you get an error :(
+        res.redirect('/dashboard/notes');
+    }
 })
 
 function isLoggedIn(req, res, next) {

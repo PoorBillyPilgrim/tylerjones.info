@@ -39,6 +39,12 @@
         </div>
         <div id="notes">
             <h2>_notes</h2>
+            <div class="notes-container">
+                <% notes.forEach(note => { %>
+                <h3><a href="/notes/<%= note.slug%>"><%= note.title %></a></h3>
+                <% }) %>
+
+            </div>
         </div>
     </div>
 

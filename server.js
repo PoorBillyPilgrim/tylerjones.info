@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override')
 const Project = require('./models/projects');
+const Note = require('./models/notes');
 
 // for login credentials
 const session = require('express-session');
@@ -84,10 +85,12 @@ app.set('view engine', 'ejs');
 const loginRoutes = require('./routes/login.js');
 // const logout = require('./routes/logout.js');
 const dashboardRoutes = require('./routes/dashboard.js');
+const notesRoutes = require('./routes/notes.js');
 
 app.get('/', async (req, res) => {
     const projects = await Project.find().sort({ createdAt: 'asc' });
-    res.render('index', { projects: projects });
+    const notes = await Note.find().sort({ createdAt: 'asc' });
+    res.render('index', { projects: projects, notes: notes });
 });
 
 app.get('/tyler-jones-resume.pdf', (req, res) => {
@@ -104,6 +107,7 @@ app.get('/tyler-jones-resume.pdf', (req, res) => {
 // because passport.authenticate('local', ... ) must be called before route to which it redirects
 app.use('/dashboard', dashboardRoutes);
 app.use('/login', loginRoutes);
+app.use('/notes', notesRoutes);
 
 app.get('/logout', (req, res) => {
     req.logout();

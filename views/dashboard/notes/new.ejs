@@ -1,12 +1,17 @@
 <%- include('../../partials/header.ejs') %>
 <%- include('../../partials/dashboardHeader.ejs') %>
+<% if (note) { %>
+<div class="container note-title-err">
+    <p>Sorry, <%= note.title %> is already taken</p>
+</div>
+<% } %>
 <form class="dashboard-form container" action="/dashboard/notes/new" method="POST">
     <label for="title">Title</label>
-    <input required id="title" type=text name="title">
+    <input required id="title" type=text name="title" value=<%= note.title %>>
     <label for="description">Description</label>
-    <textarea name="description" rows="100"></textarea>
+    <textarea name="description" rows="100"><%= note.description %></textarea>
     <label for="markdown">Markdown</label>
-    <textarea required name="markdown" class="markdown-input"></textarea>
+    <textarea required name="markdown" class="markdown-input"><%= note.markdown %></textarea>
     <input class="button-primary" type="submit" value="create note">
 </form>
 <%- include('../../partials/dashboardFooter.ejs') %>
