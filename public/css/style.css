@@ -92,6 +92,11 @@ a:hover {
     border: 1px solid var(--light);
 }
 
+.notes-card-light {
+    background-color: var(--light);
+    border: 1px solid var(--light);
+}
+
 .a-light {
     color: #C83E4D;
 }
@@ -193,6 +198,24 @@ nav ul {
 .projects-img:hover {
     opacity: 0.6;
     color: #ff8080;
+}
+
+/** Homepage -- Notes Section **/
+.notes-card {
+    padding-top: 15px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(34, 38, 42, 0.5);
+}
+
+.notes-card-dark {
+    border: 1px solid #22262a;
+    background-color: #22262a;
+}
+
+.note-card:hover {
+    opacity: 0.6;
 }
 
 /** Dashboard **/

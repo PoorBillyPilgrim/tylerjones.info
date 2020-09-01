@@ -2,7 +2,7 @@
 <%- include('../../partials/dashboardHeader.ejs') %>
 <% if (note) { %>
 <div class="container note-title-err">
-    <p>Sorry, <%= note.title %> is already taken</p>
+    <p>Sorry, <%= note.title %> is already taken. Try a different title.</p>
 </div>
 <% } %>
 <form class="dashboard-form container" action="/dashboard/notes/new" method="POST">
