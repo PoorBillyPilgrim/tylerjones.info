@@ -9,6 +9,9 @@
             <h2><%= note.title %></h2>
             <p><%= note.createdAt %></p>
             <p><%= note.slug %></p>
+            <p><%= note.id %></p>
+            <p><%= note.description %></p>
+            <p><%= note.markdown %></p>
             <div class="btns">
                 <form action="/dashboard/notes/<%= note.id %>?_method=DELETE" method="POST">
                     <button type="submit" class="button button-delete">Delete</button>

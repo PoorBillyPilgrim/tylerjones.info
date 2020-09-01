@@ -27,12 +27,12 @@ router.get('/projects', isLoggedIn, async (req, res) => {
 router.delete('/projects/:id', async (req, res) => {
     await Project.findByIdAndDelete(req.params.id);
     res.redirect('/dashboard/projects');
-})
+});
 
 router.get('/projects/edit/:id', async (req, res) => {
     const project = await Project.findById(req.params.id);
     res.render('dashboard/projects/edit', { project: project });
-})
+});
 
 router.put('/projects/edit/:id', async (req, res) => {
     project = await Project.findById(req.params.id);
@@ -44,7 +44,7 @@ router.put('/projects/edit/:id', async (req, res) => {
     project.img = req.body.img;
     project = await project.save();
     res.redirect('/dashboard/projects');
-})
+});
 
 router.get('/projects/new', isLoggedIn, (req, res) => {
     res.render('dashboard/projects/new');
@@ -78,7 +78,26 @@ router.post('/notes/new', async (req, res) => {
         // need to use redirect in order for the projects variable to load, otherwise you get an error :(
         res.redirect('/dashboard/notes');
     }
-})
+});
+
+router.delete('/notes/:id', async (req, res) => {
+    await Note.findByIdAndDelete(req.params.id);
+    res.redirect('/dashboard/notes');
+});
+
+router.get('/notes/edit/:id', async (req, res) => {
+    const note = await Note.findById(req.params.id);
+    res.render('dashboard/notes/edit', { note: note });
+});
+
+router.put('/notes/edit/:id', async (req, res) => {
+    note = await Note.findById(req.params.id);
+    note.title = req.body.title;
+    note.description = req.body.description;
+    note.markdown = req.body.markdown;
+    note = await note.save();
+    res.redirect('/dashboard/notes');
+});
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
