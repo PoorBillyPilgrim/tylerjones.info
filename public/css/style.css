@@ -44,11 +44,13 @@ a:hover {
 }
 
 .card {
-    border: 2px solid var(--light);
+    border: 1px solid #22262a;
+    background-color: #22262a;
     border-radius: 20px;
     width: 50%;
     margin: 10px 0;
     padding: 10px;
+    box-shadow: 0 5px 10px rgba(34, 38, 42, 0.5);
 }
 
 .card .btns {
