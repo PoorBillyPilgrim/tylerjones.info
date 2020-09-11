@@ -3,19 +3,9 @@ const router = express.Router();
 const Project = require('../models/projects');
 const Note = require('../models/notes');
 
-
+// /dashboard
 router.get('/', isLoggedIn, (req, res) => {
     res.render('dashboard/index');
-});
-
-// this post route is probably unecessary; consider deleting in favor of dashboardHeader btns
-router.post('/', (req, res) => {
-    if (req.body.projects) {
-        res.redirect('/dashboard/projects');
-    }
-    if (req.body.notes) {
-        res.render('dashboard/notes');
-    }
 });
 
 // Projects
