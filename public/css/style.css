@@ -78,6 +78,15 @@ a:hover {
     width: 30%;
 }
 
+code {
+    background: var(--light);
+    color: var(--dark);
+}
+
+.notes-container {
+    margin: 0 15px;
+}
+
 /** Light Theme **/ 
 .toggle-dark-mode {
     background: transparent;
