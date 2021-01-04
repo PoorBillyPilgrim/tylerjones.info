@@ -1,4 +1,6 @@
 <%- include('partials/header.ejs') %>
-<h1><%= note.title %></h1>
-<%- note.sanitizedHtml %>
+<div class="notes-container">
+    <h1><%= note.title %></h1>
+    <%- note.sanitizedHtml %>
+</div>
 <%- include('partials/dashboardFooter.ejs') %>
