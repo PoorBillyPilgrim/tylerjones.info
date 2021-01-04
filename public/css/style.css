@@ -78,15 +78,6 @@ a:hover {
     width: 30%;
 }
 
-code {
-    background: var(--light);
-    color: var(--dark);
-}
-
-.notes-container {
-    margin: 0 15px;
-}
-
 /** Light Theme **/ 
 .toggle-dark-mode {
     background: transparent;
@@ -314,6 +305,23 @@ textarea {
     margin: auto;
 }
 
+/** /notes/:slug **/
+code {
+    background: var(--light);
+    color: var(--dark);
+}
+
+.notes-container {
+    margin: 0 15px;
+}
+
+.notes-container > h1 {
+    padding: 10px;
+    margin-bottom: 50px;
+    border: solid var(--light) 4px;
+    box-shadow: -5px 5px var(--light);
+}
+
 /** Footer **/ 
 footer {
     display: flex;
@@ -375,5 +383,16 @@ footer .social-media-blurb {
 
     span.projects-card-item {
         margin-top: auto;
+    }
+
+    /** /notes/:slug **/
+    .notes-container {
+        margin: auto;
+        width: 40%;
+    }
+
+    .notes-container > h1 {
+        border: solid var(--light) 4px;
+        box-shadow: 25px 25px var(--light);
     }
 }
