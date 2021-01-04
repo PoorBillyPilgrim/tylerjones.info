@@ -320,7 +320,7 @@ footer .social-media-blurb {
     justify-content: center;
 }
 
-/** screens wider than 750px **/
+/** screens wider than 1000px **/
 @media (min-width: 1000px) {
     /** Global **/
     
