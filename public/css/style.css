@@ -388,7 +388,7 @@ footer .social-media-blurb {
     /** /notes/:slug **/
     .notes-slug-container {
         margin: auto;
-        width: 40%;
+        width: 60%;
     }
 
     .notes-slug-container > h1 {
