@@ -88,7 +88,7 @@ const dashboardRoutes = require('./routes/dashboard.js');
 const notesRoutes = require('./routes/notes.js');
 
 app.get('/', async (req, res) => {
-    const projects = await Project.find().sort({ createdAt: 'asc' });
+    const projects = await Project.find().sort({ createdAt: 'desc' });
     const notes = await Note.find().sort({ createdAt: 'desc' });
     res.render('index', { projects: projects, notes: notes });
 });
