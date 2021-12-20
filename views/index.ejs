@@ -26,7 +26,7 @@
                 <% projects.forEach(project => { %>
                 <div class="projects-card projects-card-dark">
                     <a href=<%= project.url %> target="_blank"><img class="projects-img"
-                            src="/images/projects/<%= project.img%>"></a>
+                            src="<%= project.img%>"></a>
                     <h3 class="projects-card-item"><a href=<%= project.url%> target="_blank"><%= project.title %></a>
                     </h3>
                     <p class="projects-card-item"><%= project.description%></p>
