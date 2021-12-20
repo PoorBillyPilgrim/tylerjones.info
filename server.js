@@ -89,7 +89,7 @@ const notesRoutes = require('./routes/notes.js');
 
 app.get('/', async (req, res) => {
     const projects = await Project.find().sort({ createdAt: 'asc' });
-    const notes = await Note.find().sort({ createdAt: 'asc' });
+    const notes = await Note.find().sort({ createdAt: 'dsc' });
     res.render('index', { projects: projects, notes: notes });
 });
 
